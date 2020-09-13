@@ -5,18 +5,17 @@ import android.content.Intent;
 import android.os.IBinder;
 import androidx.annotation.Nullable;
 
+import com.diusframi.android.service.stats.remote.StatsRemoteApiImpl;
+
 
 public class ServiceStats extends Service {
+    
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
-    }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
+        System.out.println("----service on bind received");
+        ServiceGlobalInfo.getInstance().setContext(ServiceStats.this);
+        return new StatsRemoteApiImpl().asBinder();
     }
 
     @Override
@@ -24,4 +23,7 @@ public class ServiceStats extends Service {
         StatsManager.getInstance().init(getBaseContext());
         return super.onStartCommand(intent, flags, startId);
     }
+    
+
+
 }

@@ -1,2 +1,3 @@
+include ':androidstatserviceapi'
 include ':app'
 rootProject.name = "DiusframiAndroidInfo"

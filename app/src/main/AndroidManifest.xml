@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.diusframi.android.service.stats">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -16,7 +17,14 @@
         <service
             android:enabled="true"
             android:exported="true"
-            android:name=".ServiceStats"/>
+            android:name=".ServiceStats"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.diusframi.android.service.stats.ServiceStats" />
+            </intent-filter>
+        </service>
+
+
 
         <receiver android:name=".ServiceBroadcast">
             <intent-filter>
