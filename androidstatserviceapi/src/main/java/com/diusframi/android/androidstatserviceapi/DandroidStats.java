@@ -43,6 +43,17 @@ public class DandroidStats {
         return logs;
     }
 
+    public boolean clearStatLogs(){
+
+        boolean res = false;
+        try{
+//            res = remoteApi
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return res;
+    }
+
 
     public interface DandroidStatsDelegate{
         void onInit(boolean status);

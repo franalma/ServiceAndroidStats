@@ -4,7 +4,6 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import androidx.annotation.Nullable;
-
 import com.diusframi.android.service.stats.remote.StatsRemoteApiImpl;
 
 
@@ -13,7 +12,6 @@ public class ServiceStats extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        System.out.println("----service on bind received");
         ServiceGlobalInfo.getInstance().setContext(ServiceStats.this);
         return new StatsRemoteApiImpl().asBinder();
     }

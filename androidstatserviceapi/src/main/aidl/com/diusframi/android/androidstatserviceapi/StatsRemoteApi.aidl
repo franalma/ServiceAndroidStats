@@ -6,4 +6,5 @@ package com.diusframi.android.androidstatserviceapi;
 interface StatsRemoteApi {
 
     String getLogInfo();
+    boolean clearStatLogs();
 }
