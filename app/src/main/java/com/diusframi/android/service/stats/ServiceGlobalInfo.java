@@ -6,13 +6,14 @@ public class ServiceGlobalInfo {
     private static ServiceGlobalInfo instance;
     private Context context;
 
-    private ServiceGlobalInfo(){}
+    private ServiceGlobalInfo(){ }
 
     public Context getContext() {
         return context;
     }
 
     public void setContext(Context context) {
+
         this.context = context;
     }
 

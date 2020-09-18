@@ -12,8 +12,14 @@ public class ServiceStats extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        ServiceGlobalInfo.getInstance().setContext(ServiceStats.this);
+        StatsManager.getInstance().init(getBaseContext());
         return new StatsRemoteApiImpl().asBinder();
+    }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        StatsManager.getInstance().onUnBind(getBaseContext());
+        return super.onUnbind(intent);
     }
 
     @Override

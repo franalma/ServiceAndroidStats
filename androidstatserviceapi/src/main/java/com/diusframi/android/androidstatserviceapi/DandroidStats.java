@@ -47,7 +47,7 @@ public class DandroidStats {
 
         boolean res = false;
         try{
-//            res = remoteApi
+            res = remoteApi.clearStatLogs();
         }catch (Exception e){
             e.printStackTrace();
         }
