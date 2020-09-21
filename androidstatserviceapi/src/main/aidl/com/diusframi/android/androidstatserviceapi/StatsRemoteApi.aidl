@@ -7,4 +7,5 @@ interface StatsRemoteApi {
 
     String getLogInfo();
     boolean clearStatLogs();
+    void getPaxSdkLogs();
 }
